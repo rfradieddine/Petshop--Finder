@@ -15,7 +15,6 @@ const PetshopService = {
             console.error(error);
         }
     }
-    
 }
 
 

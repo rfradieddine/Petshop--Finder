@@ -20,7 +20,7 @@ module.exports = {
             return res.status(400).json({ error: 'Dados não fornecidos.' });
         }
         
-        // Verifica se a data está no formato 'dd/MM/yyyy' antes de tentar fazer o parse
+        // Verifica se a data está no formato 'dd/MM/yyyy' antes de tentar realizar o parse
         const dataFormat = /^\d{2}\/\d{2}\/\d{4}$/.test(data) ? parse(data, 'dd/MM/yyyy', new Date()) : null;
         
         if (!dataFormat) {
