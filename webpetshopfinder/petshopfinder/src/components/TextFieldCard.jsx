@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PetshopService from '../../service/PetshopService';
-import { Divider, Stack, Typography, TextField, Alert, Card, Box , Button  } from '@mui/material';
+import { Divider, Stack, Typography, TextField, Alert, Card, Box, Button } from '@mui/material';
 
 export default function MelhorPetshopForm() {
   const [melhorPetshop, setMelhorPetshop] = useState(null);
@@ -36,18 +36,18 @@ export default function MelhorPetshopForm() {
     setIsLoading(true);
     setShowAlert(false);
     setShowAlertData(false);
-  
+
     try {
       const data = await PetshopService.bestPetshops(formData);
       const { data: formDataData, qtdCaesPequenos, qtdCaesGrandes } = formData;
-  
+
       if (!formDataData || !qtdCaesPequenos || !qtdCaesGrandes) {
         setShowAlert(true);
       }
-  
+
       const regexData = /^\d{2}\/\d{2}\/\d{4}$/;
       const [dia, mes, ano] = formDataData.split('/').map(Number);
-  
+
       if (!regexData.test(formDataData) || dia < 1 || dia > 31 || mes < 1 || mes > 12) {
         setShowAlertData(true);
       } else {
@@ -80,9 +80,65 @@ export default function MelhorPetshopForm() {
           autoComplete="off"
           onSubmit={handleSubmit}
         >
-          <TextField id="data" label="Data do Banho" variant="outlined" onChange={handleChange} color="warning" value={formData.data} />
-          <TextField id="qtdCaesPequenos" label="Quantidade de Cães Pequenos" variant="outlined" color="warning" onChange={handleChange} />
-          <TextField id="qtdCaesGrandes" label="Quantidade Cães Grandes" variant="outlined" color="warning" onChange={handleChange} />
+          <TextField
+            id="data"
+            label="Data do Banho"
+            variant="outlined"
+            onChange={handleChange}
+            color="warning"
+            value={formData.data}
+            sx={{
+              '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'white',
+              },
+              '&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'white',
+              },
+              '&.Mui-focused .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'white',
+              },
+              '& .MuiInputLabel-outlined': {
+                color: 'white',
+              },
+              '& .MuiInputBase-input': {
+                color: 'white',
+              },
+            }}
+          />
+          <TextField id="qtdCaesPequenos" label="Quantidade de Cães Pequenos" variant="outlined" color="warning" onChange={handleChange} sx={{
+              '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'white',
+              },
+              '&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'white',
+              },
+              '&.Mui-focused .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'white',
+              },
+              '& .MuiInputLabel-outlined': {
+                color: 'white',
+              },
+              '& .MuiInputBase-input': {
+                color: 'white',
+              },
+            }}/>
+          <TextField id="qtdCaesGrandes" label="Quantidade Cães Grandes" variant="outlined" color="warning" onChange={handleChange} sx={{
+              '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'white',
+              },
+              '&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'white',
+              },
+              '&.Mui-focused .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'white',
+              },
+              '& .MuiInputLabel-outlined': {
+                color: 'white',
+              },
+              '& .MuiInputBase-input': {
+                color: 'white',
+              },
+            }}/>
         </Box>
       </Box>
 
