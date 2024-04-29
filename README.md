@@ -92,8 +92,6 @@ Para executar o frontend, é necessário ter o **Node** instalado na máquina (v
         ```
     O frontend estará sendo executado.
 
-Lembre-se de manter seu **README.md** atualizado e claro para que outros desenvolvedores possam entender e colaborar com seu projeto! 🚀
-
 # Lista de premissas assumidas
 
 - Para realizar a busca por PetShops, é necessário preencher todos os campos corretamente conforme solicitado pelo sistema.
