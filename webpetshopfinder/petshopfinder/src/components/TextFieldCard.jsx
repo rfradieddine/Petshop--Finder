@@ -1,14 +1,6 @@
 import React, { useState } from 'react';
-import Card from '@mui/material/Card';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import PetshopService from '../../service/PetshopService';
-import Alert from '@mui/material/Alert';
-import Stack from '@mui/material/Stack';
-import Chip from '@mui/material/Chip';
-import Divider from '@mui/material/Divider';
+import { Divider, Stack, Typography, TextField, Alert, Card, Box , Button  } from '@mui/material';
 
 export default function MelhorPetshopForm() {
   const [melhorPetshop, setMelhorPetshop] = useState(null);
@@ -19,29 +11,48 @@ export default function MelhorPetshopForm() {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [showAlertData, setShowAlertData] = useState(false);
 
   const handleChange = (e) => {
     const { id, value } = e.target;
+    let formattedValue = value;
+    if (id === 'data') {
+      formattedValue = formatData(value);
+    }
     setFormData((prevData) => ({
       ...prevData,
-      [id]: value
+      [id]: formattedValue
     }));
   };
 
+  const formatData = (input) => {
+    const numericValue = input.replace(/\D/g, '');
+    return numericValue.replace(/(\d{2})(\d{2})(\d{4})/, '$1/$2/$3');
+  };
+
+  // Validações
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-
+    setShowAlert(false);
+    setShowAlertData(false);
+  
     try {
       const data = await PetshopService.bestPetshops(formData);
-      if (!formData.data || !formData.qtdCaesPequenos || !formData.qtdCaesGrandes) {
+      const { data: formDataData, qtdCaesPequenos, qtdCaesGrandes } = formData;
+  
+      if (!formDataData || !qtdCaesPequenos || !qtdCaesGrandes) {
         setShowAlert(true);
+      }
+  
+      const regexData = /^\d{2}\/\d{2}\/\d{4}$/;
+      const [dia, mes, ano] = formDataData.split('/').map(Number);
+  
+      if (!regexData.test(formDataData) || dia < 1 || dia > 31 || mes < 1 || mes > 12) {
+        setShowAlertData(true);
       } else {
-        setShowAlert(false);
         setMelhorPetshop(data);
       }
-
-      setMelhorPetshop(data);
     } catch (error) {
       console.error('Erro ao enviar a solicitação:', error.message);
     } finally {
@@ -69,7 +80,7 @@ export default function MelhorPetshopForm() {
           autoComplete="off"
           onSubmit={handleSubmit}
         >
-          <TextField id="data" label="Data do Banho" variant="outlined" onChange={handleChange} color="warning" />
+          <TextField id="data" label="Data do Banho" variant="outlined" onChange={handleChange} color="warning" value={formData.data} />
           <TextField id="qtdCaesPequenos" label="Quantidade de Cães Pequenos" variant="outlined" color="warning" onChange={handleChange} />
           <TextField id="qtdCaesGrandes" label="Quantidade Cães Grandes" variant="outlined" color="warning" onChange={handleChange} />
         </Box>
@@ -97,6 +108,11 @@ export default function MelhorPetshopForm() {
       {showAlert && (
         <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
           <Alert severity="warning">Por favor, preencha todos os campos.</Alert>
+        </Box>
+      )}
+      {showAlertData && (
+        <Box sx={{ display: 'flex', justifyContent: 'center', mt: 2 }}>
+          <Alert severity="warning">Por favor, preencha a data corretamente dd/MM/aaaa.</Alert>
         </Box>
       )}
 
