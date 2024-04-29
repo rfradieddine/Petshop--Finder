@@ -7,7 +7,6 @@
   },
   "main": "src/index.js",
   "scripts": {
-    "start": "node srx/index",
     "start": "nodemon"
   },
   "author": "Rafael Marques Radieddine",
