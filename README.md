@@ -117,7 +117,17 @@ Durante o desenvolvimento do projeto, utilizei algumas bibliotecas para agilizar
 4. **Knex.js**:
     - O Knex.js é um construtor de consultas SQL para Node.js. Ele simplifica a criação e execução de consultas ao banco de dados, permitindo que você escreva consultas em JavaScript em vez de SQL puro. É especialmente útil para gerenciar migrações e seeds de dados.
 
+### Layout
+Considerando a situação a ser abordada, o Senhor Eduardo é o dono de um canil que abriga várias raças de cães, sugerindo que ele possa ter pouco tempo disponível. O layout que desenvolvi para o projeto é mais centralizado, permitindo que o Senhor Eduardo insira rapidamente suas informações essenciais ao acessar o sistema. Isso garante que o sistema responda imediatamente, sem demoras ou transições entre páginas.
+
+
 ### Banco de dados
 
 **Postgres**:
 - É um sistema de gerenciamento de banco de dados relacional de código aberto. Ele é conhecido por sua confiabilidade, escalabilidade e recursos avançados, possuindo compatibilidade com a biblioteca Knex.js.
+
+
+# Acesso ao Frontend
+
+
+- Você pode visualizar a aparência atualizada do Frontend ao acessar o seguinte link: https://petshop-finder.vercel.app/, sem a necessidade de executar o projeto. No entanto, para garantir o funcionamento correto do sistema, incluindo a conexão com o banco de dados e a integração perfeita com o Frontend, é crucial executá-lo localmente.
