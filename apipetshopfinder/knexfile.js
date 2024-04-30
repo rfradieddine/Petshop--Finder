@@ -22,11 +22,14 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: process.env.DATABASE_URL,
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
-    ,
+    connection: {
+      host: 'dpg-coo5vbev3ddc738h99lg-a.oregon-postgres.render.com',
+      port: 5432,
+      database: 'todolist_lc7g',
+      user: 'admin',
+      password: 'FekYfRHWQWpregAlAvChvpmKeIwMnxFS',
+      ssl: { rejectUnauthorized: false } 
+    },
     pool: {
       min: 2,
       max: 10
