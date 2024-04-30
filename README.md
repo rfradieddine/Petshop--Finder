@@ -1,6 +1,6 @@
 # PetshopFinder
 Sistema para encontrar o melhor Petshop para você e seu pet!
-# Sobre o projeot
+# Sobre o projeto
 
 O objetivo do projeto é facilitar a busca do Sr. Eduardo pelo melhor petshop, levando em consideração o dia da semana. Cada petshop tem diferentes preços para cães de porte pequeno e grande, os quais variam de acordo com o dia.
 
@@ -91,8 +91,6 @@ Para executar o frontend, é necessário ter o **Node** instalado na máquina (v
         npm run dev
         ```
     O frontend estará sendo executado.
-
-Lembre-se de manter seu **README.md** atualizado e claro para que outros desenvolvedores possam entender e colaborar com seu projeto! 🚀
 
 # Lista de premissas assumidas
 

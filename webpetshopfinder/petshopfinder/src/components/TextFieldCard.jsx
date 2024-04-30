@@ -106,39 +106,39 @@ export default function MelhorPetshopForm() {
             }}
           />
           <TextField id="qtdCaesPequenos" label="Quantidade de Cães Pequenos" variant="outlined" color="warning" onChange={handleChange} sx={{
-              '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'white',
-              },
-              '&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'white',
-              },
-              '&.Mui-focused .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'white',
-              },
-              '& .MuiInputLabel-outlined': {
-                color: 'white',
-              },
-              '& .MuiInputBase-input': {
-                color: 'white',
-              },
-            }}/>
+            '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+              borderColor: 'white',
+            },
+            '&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+              borderColor: 'white',
+            },
+            '&.Mui-focused .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+              borderColor: 'white',
+            },
+            '& .MuiInputLabel-outlined': {
+              color: 'white',
+            },
+            '& .MuiInputBase-input': {
+              color: 'white',
+            },
+          }} />
           <TextField id="qtdCaesGrandes" label="Quantidade Cães Grandes" variant="outlined" color="warning" onChange={handleChange} sx={{
-              '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'white',
-              },
-              '&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'white',
-              },
-              '&.Mui-focused .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
-                borderColor: 'white',
-              },
-              '& .MuiInputLabel-outlined': {
-                color: 'white',
-              },
-              '& .MuiInputBase-input': {
-                color: 'white',
-              },
-            }}/>
+            '& .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+              borderColor: 'white',
+            },
+            '&:hover .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+              borderColor: 'white',
+            },
+            '&.Mui-focused .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline': {
+              borderColor: 'white',
+            },
+            '& .MuiInputLabel-outlined': {
+              color: 'white',
+            },
+            '& .MuiInputBase-input': {
+              color: 'white',
+            },
+          }} />
         </Box>
       </Box>
 
